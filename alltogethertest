@@ -1,0 +1,371 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Duo Alinavot - Hand to Hand & Clowning Circus Duo</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Courier New', monospace;
+            background-color: #f9f5f0;
+            color: #2c2c2c;
+            line-height: 1.6;
+        }
+
+        /* Header */
+        header {
+            text-align: center;
+            padding: 80px 20px 60px;
+            background: linear-gradient(180deg, #fff9f0 0%, #f9f5f0 100%);
+            position: relative;
+            overflow: hidden;
+        }
+
+        header::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background-image: 
+                radial-gradient(circle at 20% 30%, rgba(255, 200, 150, 0.2) 0%, transparent 50%),
+                radial-gradient(circle at 80% 70%, rgba(150, 200, 255, 0.2) 0%, transparent 50%);
+            pointer-events: none;
+        }
+
+        h1 {
+            font-size: 4em;
+            font-weight: bold;
+            color: #d44848;
+            text-shadow: 3px 3px 0 #ffd700;
+            margin-bottom: 10px;
+            position: relative;
+            z-index: 1;
+        }
+
+        .subtitle {
+            font-size: 1.5em;
+            color: #5a5a5a;
+            font-style: italic;
+            position: relative;
+            z-index: 1;
+        }
+
+        /* Decorative stars */
+        .star {
+            position: absolute;
+            font-size: 2em;
+            animation: twinkle 3s infinite;
+            z-index: 0;
+        }
+
+        @keyframes twinkle {
+            0%, 100% { opacity: 0.3; transform: scale(1); }
+            50% { opacity: 1; transform: scale(1.2); }
+        }
+
+        /* Container */
+        .container {
+            max-width: 1000px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+
+        /* Section Styling */
+        section {
+            margin: 60px 0;
+            padding: 40px;
+            background: white;
+            border-radius: 20px;
+            box-shadow: 0 8px 30px rgba(0, 0, 0, 0.1);
+            position: relative;
+            overflow: hidden;
+        }
+
+        section::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 8px;
+            background: linear-gradient(90deg, #d44848, #ffd700, #4a9eff);
+        }
+
+        h2 {
+            font-size: 2.5em;
+            color: #d44848;
+            margin-bottom: 30px;
+            text-align: center;
+            position: relative;
+            display: inline-block;
+            width: 100%;
+        }
+
+        h2::after {
+            content: '★';
+            position: absolute;
+            right: 20%;
+            top: -10px;
+            font-size: 0.5em;
+            color: #ffd700;
+            animation: spin 4s linear infinite;
+        }
+
+        @keyframes spin {
+            from { transform: rotate(0deg); }
+            to { transform: rotate(360deg); }
+        }
+
+        /* Video Section */
+        .video-container {
+            position: relative;
+            padding-bottom: 56.25%;
+            height: 0;
+            overflow: hidden;
+            border-radius: 15px;
+            box-shadow: 0 5px 20px rgba(0, 0, 0, 0.2);
+        }
+
+        .video-container iframe {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            border: none;
+        }
+
+        /* Bio Section */
+        .bio-content {
+            display: flex;
+            gap: 30px;
+            align-items: center;
+            flex-wrap: wrap;
+        }
+
+        .bio-image {
+            flex: 1;
+            min-width: 250px;
+            text-align: center;
+        }
+
+        .bio-image img {
+            width: 100%;
+            max-width: 350px;
+            border-radius: 15px;
+            box-shadow: 0 5px 20px rgba(0, 0, 0, 0.15);
+            border: 5px solid #ffd700;
+        }
+
+        .bio-text {
+            flex: 2;
+            min-width: 300px;
+        }
+
+        .bio-text p {
+            margin-bottom: 20px;
+            font-size: 1.1em;
+            text-align: justify;
+        }
+
+        /* Show Section */
+        .show-details {
+            background: linear-gradient(135deg, #fff9f0 0%, #ffe6e6 100%);
+            padding: 30px;
+            border-radius: 15px;
+            margin-top: 20px;
+        }
+
+        .show-details h3 {
+            color: #d44848;
+            font-size: 1.8em;
+            margin-bottom: 15px;
+        }
+
+        .show-details p {
+            margin-bottom: 15px;
+            font-size: 1.1em;
+        }
+
+        .show-highlights {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 20px;
+            margin-top: 30px;
+        }
+
+        .highlight-card {
+            background: white;
+            padding: 20px;
+            border-radius: 10px;
+            text-align: center;
+            box-shadow: 0 3px 10px rgba(0, 0, 0, 0.1);
+            transition: transform 0.3s ease;
+        }
+
+        .highlight-card:hover {
+            transform: translateY(-5px);
+        }
+
+        .highlight-card .icon {
+            font-size: 2.5em;
+            margin-bottom: 10px;
+        }
+
+        /* Footer */
+        footer {
+            text-align: center;
+            padding: 40px 20px;
+            background: #2c2c2c;
+            color: white;
+            margin-top: 80px;
+        }
+
+        footer a {
+            color: #ffd700;
+            text-decoration: none;
+            font-weight: bold;
+        }
+
+        footer a:hover {
+            text-decoration: underline;
+        }
+
+        /* Responsive */
+        @media (max-width: 768px) {
+            h1 {
+                font-size: 2.5em;
+            }
+
+            .subtitle {
+                font-size: 1.2em;
+            }
+
+            h2 {
+                font-size: 2em;
+            }
+
+            .bio-content {
+                flex-direction: column;
+            }
+
+            section {
+                padding: 30px 20px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <span class="star" style="top: 20%; left: 15%;">★</span>
+        <span class="star" style="top: 60%; left: 10%; animation-delay: 1s;">✦</span>
+        <span class="star" style="top: 30%; right: 20%; animation-delay: 0.5s;">✧</span>
+        <span class="star" style="top: 70%; right: 15%; animation-delay: 1.5s;">★</span>
+        
+        <h1>Duo Alinavot</h1>
+        <p class="subtitle">Hand to Hand & Clowning Circus Duo</p>
+    </header>
+
+    <div class="container">
+        <!-- Trailer Section -->
+        <section id="trailer">
+            <h2>Watch Our Trailer</h2>
+            <div class="video-container">
+                <!-- Replace the src with your actual YouTube/Vimeo embed URL -->
+                <iframe 
+                    src="https://www.youtube.com/embed/dQw4w9WgXcQ" 
+                    allowfullscreen
+                    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture">
+                </iframe>
+            </div>
+        </section>
+
+        <!-- About the Duo Section -->
+        <section id="about">
+            <h2>Meet Duo Alinavot</h2>
+            <div class="bio-content">
+                <div class="bio-image">
+                    <!-- Replace with actual image -->
+                    <img src="https://images.unsplash.com/photo-1516450360452-9312f5e86fc7?w=400" alt="Duo Alinavot performers">
+                </div>
+                <div class="bio-text">
+                    <p>
+                        Duo Alinavot is a dynamic hand-to-hand and clowning circus duo that brings laughter, 
+                        wonder, and breathtaking acrobatics to audiences around the world. With a perfect 
+                        blend of physical comedy and stunning aerial choreography, they create unforgettable 
+                        performances that resonate with all ages.
+                    </p>
+                    <p>
+                        Their unique artistic approach combines the precision of hand-to-hand acrobatics with 
+                        the spontaneity and humor of clowning, creating a theatrical experience that is both 
+                        technically impressive and deeply human. Each performance tells a story through movement, 
+                        comedy, and genuine connection with the audience.
+                    </p>
+                    <p>
+                        With backgrounds in contemporary circus, physical theater, and clowning traditions, 
+                        the duo has performed at festivals and venues across Europe and beyond, constantly 
+                        pushing the boundaries of what circus can be.
+                    </p>
+                </div>
+            </div>
+        </section>
+
+        <!-- About the Show Section -->
+        <section id="show">
+            <h2>Our Show</h2>
+            <div class="show-details">
+                <h3>A Journey of Balance and Joy</h3>
+                <p>
+                    Duo Alinavot's signature show is an exhilarating journey that explores the delicate 
+                    balance between strength and vulnerability, precision and chaos, partnership and 
+                    individuality. Through stunning hand-to-hand acrobatics interwoven with moments of 
+                    pure comedic brilliance, the duo invites audiences into their world of playful 
+                    exploration and trust.
+                </p>
+                <p>
+                    The performance seamlessly transitions between breathtaking acrobatic sequences and 
+                    intimate clowning moments, creating a rich tapestry of emotion and spectacle. Every 
+                    catch, every fall, every laugh is a testament to their years of training and their 
+                    deep artistic partnership.
+                </p>
+            </div>
+
+            <div class="show-highlights">
+                <div class="highlight-card">
+                    <div class="icon">🎪</div>
+                    <h4>Hand to Hand</h4>
+                    <p>Breathtaking acrobatic displays showcasing strength, balance, and trust</p>
+                </div>
+                <div class="highlight-card">
+                    <div class="icon">😄</div>
+                    <h4>Clowning</h4>
+                    <p>Physical comedy that brings joy and laughter to audiences of all ages</p>
+                </div>
+                <div class="highlight-card">
+                    <div class="icon">🎭</div>
+                    <h4>Storytelling</h4>
+                    <p>Narrative woven through movement, creating emotional connections</p>
+                </div>
+                <div class="highlight-card">
+                    <div class="icon">🌟</div>
+                    <h4>Universal Appeal</h4>
+                    <p>Transcends language barriers through visual and physical expression</p>
+                </div>
+            </div>
+        </section>
+    </div>
+
+    <footer>
+        <p>&copy; 2025 Duo Alinavot | Contact: <a href="mailto:info@duoalinavot.com">info@duoalinavot.com</a></p>
+        <p style="margin-top: 10px; font-size: 0.9em;">Let's create magic together ✨</p>
+    </footer>
+</body>
+</html>
