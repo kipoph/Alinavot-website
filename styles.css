@@ -72,15 +72,43 @@
             transition: 0.3s;
         }
 
-        /* Header */
+
+/* Header */
         header {
-            text-align: center;
-            padding: 80px 20px 60px;
-            background: linear-gradient(180deg, #fff9f0 0%, #f9f5f0 100%);
+            padding: 60px 20px;
+            background:#050507;
             position: relative;
             overflow: hidden;
         }
 
+        .hero-content {
+            max-width: 1200px;
+            margin: 0 auto;
+            display: flex;
+            align-items: center;
+            gap: 40px;
+            flex-direction: column;
+        }
+
+        .hero-text {
+            flex: 1;
+            text-align: center;
+            z-index: 1;
+        }
+
+        .hero-image {
+            flex: 1;
+            max-width: 500px;
+            width: 100%;
+        }
+
+        .hero-image img {
+            width: 100%;
+            height: auto;
+            border-radius: 0;
+            box-shadow: none;
+            border: none;
+        }
         header::before {
             content: '';
             position: absolute;
