@@ -280,32 +280,10 @@
 
         /* Show Section */
         .show-details {
-            display: flex;
-            align-items: center; /* Vertically align items in the center */
-            gap: 30px; /* Add some space between the text and image */
-            flex-wrap: wrap; /* Allow items to wrap on smaller screens */
             background: linear-gradient(135deg, #fff9f0 0%, #ffe6e6 100%);
             padding: 30px;
             border-radius: 15px;
             margin-top: 20px;
-        }
-
-        .show-text {
-            flex: 2; /* Allow the text to take up more space */
-            min-width: 300px;
-        }
-
-        .show-image {
-            flex: 1; /* Allow the image to take up less space */
-            min-width: 250px;
-            text-align: center;
-        }
-
-        .show-image img {
-            max-width: 100%;
-            height: auto;
-            border-radius: 10px;
-            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
         }
 
         .show-details h3 {
