@@ -1,6 +1,4 @@
-
-    <style>
-        * {
+* {
             margin: 0;
             padding: 0;
             box-sizing: border-box;
@@ -35,6 +33,12 @@
             font-size: 1.5em;
             font-weight: bold;
             padding: 15px 0;
+        }
+
+        .logo-img {
+            height: 50px;
+            width: auto;
+            vertical-align: middle;
         }
 
         .nav-links {
@@ -418,4 +422,3 @@
                 position: relative;
             }
         }
-    </style>
