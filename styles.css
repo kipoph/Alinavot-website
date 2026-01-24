@@ -5,7 +5,7 @@
         }
 
         body {
-            font-family: 'Courier New', monospace;
+            font-family: 'Roboto', monospace;
             background-color: #f9f5f0;
             color: #2c2c2c;
             line-height: 1.6;
@@ -87,6 +87,7 @@
 
         .hero-content {
             max-width: 1200px;
+            height: 90vh;
             margin: 0 auto;
             display: flex;
             align-items: center;
@@ -179,7 +180,7 @@
 
         /* Container */
         .container {
-            max-width: 800px;
+            max-width: 1000px;
             margin: 0 auto;
             padding: 20px;
         }
